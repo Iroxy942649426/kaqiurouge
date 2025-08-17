@@ -8,30 +8,30 @@ function getResourceUrl(path){
 
 // 宠物图片配置
 const CelestiaImages = [
-  getResourceUrl('/img/songnixingyi.png'),
-  getResourceUrl('/img/texiaoyaowan.png'),
-  getResourceUrl('/img/wenhou.png'),
-  getResourceUrl('/img/xihuan.png')
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/songnixingyi.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/texiaoyaowan.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/wenhou.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/xihuan.png?raw=true'
 ];
 
 const CelestiaTouchImages = [
-  getResourceUrl('/img/danxin.png'),
-  getResourceUrl('/img/haixiu.png'),
-  getResourceUrl('/img/haoqi.png'),
-  getResourceUrl('/img/songnixingxing.png')
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/danxin.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/haixiu.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/haoqi.png?raw=true',
+  'https://github.com/Iroxy942649426/kaqiurouge/blob/main/img/songnixingxing.png?raw=true'
 ];
 
 // 音频文件配置
 const CelestiaSounds = [
-  getResourceUrl('/audio/001.mp3'),
-  getResourceUrl('/audio/002.mp3'),
-  getResourceUrl('/audio/003.mp3'),
-  getResourceUrl('/audio/004.mp3'),
-  getResourceUrl('/audio/005.mp3'),
-  getResourceUrl('/audio/006.mp3'),
-  getResourceUrl('/audio/007.mp3'),
-  getResourceUrl('/audio/008.mp3'),
-  getResourceUrl('/audio/009.mp3')
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/001.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/002.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/003.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/004.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/005.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/006.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/007.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/008.mp3',
+  'https://github.com/Iroxy942649426/kaqiurouge/raw/refs/heads/main/audio/009.mp3'
 ];
 
 // 初始位置

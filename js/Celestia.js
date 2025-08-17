@@ -79,12 +79,12 @@ setInterval(() => {
 Celestia.addEventListener('mousedown', (e) => {
   isDragging = true;
   Celestia.style.transform = 'scale(0.5)'; // 点击反馈
-  
-  // 点击播放语音
-  playRandomSound();
-  
+
   // 点击更换图片
   setCelestiaImage(getRandomTouchImage());
+
+  // 点击播放语音
+  playRandomSound();
 });
 
 document.addEventListener('mousemove', (e) => {

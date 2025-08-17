@@ -133,6 +133,14 @@ form .search-query {
     display: block;
     border: none;
 }
+/* 新增：表格单元格内容自动换行 */
+.rst-content .section .docutils td,
+.rst-content .section .docutils th {
+    word-wrap: break-word;      /* 允许长单词换行 */
+    overflow-wrap: break-word;  /* 现代浏览器推荐属性，处理长文本换行 */
+    white-space: normal;        /* 恢复默认的文本换行行为（可能被其他样式覆盖） */
+    min-width: 80px;            /* 可选：设置最小宽度，避免单元格过窄 */
+}
 
 td, th {
     border: 1px solid #e1e4e5 !important;
@@ -195,3 +203,23 @@ td, th {
     flex: 1;
     text-align: center;
 }
+
+/* 超宽屏优化 - 增加内容最大宽度 */
+@media screen and (min-width: 1600px) { /* 针对1600px以上的超宽屏 */
+  .wy-container {
+    max-width: 90%; /* 容器占屏幕宽度的90% */
+  }
+  
+  .wy-nav-content {
+    max-width: 1400px; /* 内容最大宽度设为1400px（可调整） */
+    margin: 0 auto; /* 居中显示 */
+  }
+}
+
+/* 进一步优化：在极宽屏幕上使用更灵活的宽度 */
+@media screen and (min-width: 2000px) {
+  .wy-nav-content {
+    max-width: 1600px; /* 极宽屏上内容更宽 */
+  }
+}
+

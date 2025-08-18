@@ -70,8 +70,6 @@ class Celestia {
         const container = document.body;
         if (container) {
             container.appendChild(this.element);
-            // 调试用：确认元素已添加
-            console.log(`Celestia ${this.element.id} 已添加到页面`);
         } else {
             console.error('页面body元素不存在，无法添加实例');
         }
@@ -81,8 +79,6 @@ class Celestia {
     setRandomImage() {
         const src = this.images[Math.floor(Math.random() * this.images.length)];
         this.element.style.backgroundImage = `url('${src}')`;
-        // 调试用：确认图片路径
-        console.log(`设置图片: ${src}`);
     }
 
     // 随机设置触摸时的图片
@@ -145,26 +141,35 @@ class Celestia {
         });
     }
 
-    // 启动自动行为
+    // 启动自动行为 - 添加随机初始延迟
     startAutoBehaviors() {
-        // 每45秒自动切换图片
-        setInterval(() => {
-            if (!this.isDragging) {
-                this.setRandomImage();
-            }
-        }, 45000);
-
-        // 每3秒自动移动（减小移动幅度，避免频繁撞边界）
-        setInterval(() => {
-            if (!this.isDragging) {
-                this.x += (Math.random() - 0.5) * 50;
-                this.y += (Math.random() - 0.5) * 50;
-                this.updatePosition();
-            }
-        }, 3000);
+        // 为每个实例生成不同的随机延迟（0到2秒）
+        const baseDelay = Math.random() * 2000;
+        
+        // 随机图片切换间隔（40-50秒）和随机初始延迟
+        const imageInterval = 40000 + Math.random() * 10000; // 40-50秒随机
+        setTimeout(() => {
+            this.imageTimer = setInterval(() => {
+                if (!this.isDragging) {
+                    this.setRandomImage();
+                }
+            }, imageInterval);
+        }, baseDelay + Math.random() * 3000); // 额外增加0-3秒随机延迟
+        
+        // 随机移动间隔（2-4秒）和随机初始延迟
+        const moveInterval = 2000 + Math.random() * 2000; // 2-4秒随机
+        setTimeout(() => {
+            this.moveTimer = setInterval(() => {
+                if (!this.isDragging) {
+                    this.x += (Math.random() - 0.5) * 750;
+                    this.y += (Math.random() - 0.5) * 750;
+                    this.updatePosition();
+                }
+            }, moveInterval);
+        }, baseDelay + Math.random() * 2000); // 额外增加0-2秒随机延迟
     }
 
-    // 静态方法：预加载所有资源（修复音频加载错误）
+    // 静态方法：预加载所有资源
     static preloadResources() {
         // 图片资源集合
         const allImages = [
@@ -186,7 +191,7 @@ class Celestia {
             img.onerror = () => console.error(`图片加载失败: ${src}`);
         });
 
-        // 预加载音频 - 修复错误部分
+        // 预加载音频
         const allSounds = [
             './audio/001.mp3',
             './audio/002.mp3',

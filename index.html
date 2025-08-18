@@ -26,16 +26,8 @@
 </head>
 
 <body class="wy-body-for-nav" role="document">
-<script src="js/Celestia_local.js"></script>
-<script>
-    // 页面加载完成后执行
-    window.addEventListener('load', () => {
-        // 预加载资源（避免首次交互时的延迟）
-        Celestia.preloadResources();
-        // 创建10个实例
-        Celestia.createMultiple(10);
-    });
-</script>
+  <div id="Celestia"></div>
+  <script src="js/Celestia.js"></script>
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">

@@ -1,4 +1,4 @@
-#Celestia {
+.celestia {
     position: fixed;
     width: 256px;
     height: 256px;
@@ -9,7 +9,5 @@
     transition: left 0.2s ease, top 0.2s ease;
     z-index: 9999;
     transform: scale(0.4);
-}
-.hidden {
-    display: none;
+    pointer-events: auto;
 }
